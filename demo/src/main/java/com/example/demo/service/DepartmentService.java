@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Department;
+import com.example.demo.error.DepartmentNotFoundException;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public interface DepartmentService {
 
     List<Department> fetchedDepartmentList();
 
-    Department fetchedDepartmentById(Long departmentId);
+    Department fetchedDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
     public void deleteDepartmentById(Long departmentId);
 
